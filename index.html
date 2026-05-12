@@ -10,6 +10,7 @@
 <meta property="og:description" content="Thalir Academy equips rural youth and women in Tamil Nadu with digital literacy, tailoring, and vocational skills for jobs and self-employment.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
@@ -23,7 +24,6 @@
     <li><a href="pages/about.html">About</a></li>
     <li><a href="pages/programs.html">Programs</a></li>
     <li><a href="pages/impact.html">Impact</a></li>
-    <li><a href="pages/gallery.html">Gallery</a></li>
     <li><a href="pages/get-involved.html">Get Involved</a></li>
     <li><a href="pages/join.html">Join Us</a></li>
     <li><a href="pages/connect.html">Contact</a></li>
@@ -34,11 +34,7 @@
 
 <!-- HERO -->
 <section class="hero" id="hero">
-  <div class="hero-slides">
-    <div class="hero-slide active" style="background-image:url('assets/images/community.jpg')"></div>
-    <div class="hero-slide" style="background-image:url('assets/images/tailoring-class.jpg')"></div>
-    <div class="hero-slide" style="background-image:url('assets/images/training-session.jpg')"></div>
-  </div>
+  <div style="position:absolute;inset:0;background-image:url('assets/images/home-hero.jpg');background-size:cover;background-position:center 28%;z-index:0"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-badge"><span class="pulse"></span> NSDC Skill India Registered Partner</div>
@@ -50,11 +46,7 @@
       <a href="pages/get-involved.html" class="btn btn-outline-light">Partner With Us</a>
     </div>
   </div>
-  <div class="hero-dots">
-    <button class="dot active" data-slide="0"></button>
-    <button class="dot" data-slide="1"></button>
-    <button class="dot" data-slide="2"></button>
-  </div>
+  
 </section>
 
 <!-- TRUST STRIP -->
@@ -180,25 +172,44 @@
 </section>
 
 <!-- DONOR STRIP -->
+<style>
+.donor-strip{background:#C5D86D;padding:48px 0 44px;overflow:hidden}
+.donor-strip-header{text-align:center;margin-bottom:36px;padding:0 5%}
+.ds-label{display:block;font-family:'Figtree',sans-serif;font-size:.71rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(38,28,21,.6);margin-bottom:8px}
+.ds-title{font-family:'IBM Plex Sans',sans-serif;font-size:1.55rem;font-weight:700;color:#1a1208;margin:0}
+.slider-wrap{width:100%;overflow:hidden;position:relative}
+.slider-wrap::before,.slider-wrap::after{content:'';position:absolute;top:0;bottom:0;width:160px;z-index:2;pointer-events:none}
+.slider-wrap::before{left:0;background:linear-gradient(to right,#C5D86D,transparent)}
+.slider-wrap::after{right:0;background:linear-gradient(to left,#C5D86D,transparent)}
+.slider-inner{display:flex;align-items:center;width:max-content;animation:ticker 28s linear infinite}
+.slider-inner:hover{animation-play-state:paused}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.donor-item{display:flex;align-items:center;justify-content:center;padding:14px 56px;border-right:1px solid rgba(38,28,21,.12)}
+.donor-item:last-child{border-right:none}
+.donor-item img{height:64px;width:auto;max-width:180px;object-fit:contain;transition:transform .3s ease}
+.donor-item:hover img{transform:scale(1.07)}
+.donor-aasai img{mix-blend-mode:multiply}
+.donor-kalanjiyam img{mix-blend-mode:multiply;height:48px}
+</style>
 <section class="donor-strip">
   <div class="donor-strip-header">
     <span class="ds-label">Supported By</span>
-    <h2>Our Donors &amp; Partners</h2>
+    <h2 class="ds-title">Our Donors &amp; Partners</h2>
   </div>
   <div class="slider-wrap">
     <div class="slider-inner">
-      <div class="donor-item"><img src="assets/images/aasai.png"     alt="Aasai"></div>
-      <div class="donor-item"><img src="assets/images/idrf.svg"      alt="IDRF"></div>
+      <div class="donor-item donor-aasai"><img src="assets/images/aasai.png" alt="Aasai Foundation"></div>
+      <div class="donor-item"><img src="assets/images/idrf.svg" alt="IDRF"></div>
       <div class="donor-item"><img src="assets/images/sharecare.svg" alt="Share &amp; Care Foundation"></div>
-      <div class="donor-item"><img src="assets/images/aasai.png"     alt="Aasai"></div>
-      <div class="donor-item"><img src="assets/images/idrf.svg"      alt="IDRF"></div>
+      <div class="donor-item donor-kalanjiyam"><img src="assets/images/kalanjiyam-trust.png" alt="Kalanjiyam Trust"></div>
+      <div class="donor-item donor-aasai"><img src="assets/images/aasai.png" alt="Aasai Foundation"></div>
+      <div class="donor-item"><img src="assets/images/idrf.svg" alt="IDRF"></div>
       <div class="donor-item"><img src="assets/images/sharecare.svg" alt="Share &amp; Care Foundation"></div>
-      <div class="donor-item"><img src="assets/images/aasai.png"     alt="Aasai"></div>
-      <div class="donor-item"><img src="assets/images/idrf.svg"      alt="IDRF"></div>
+      <div class="donor-item donor-kalanjiyam"><img src="assets/images/kalanjiyam-trust.png" alt="Kalanjiyam Trust"></div>
+      <div class="donor-item donor-aasai"><img src="assets/images/aasai.png" alt="Aasai Foundation"></div>
+      <div class="donor-item"><img src="assets/images/idrf.svg" alt="IDRF"></div>
       <div class="donor-item"><img src="assets/images/sharecare.svg" alt="Share &amp; Care Foundation"></div>
-      <div class="donor-item"><img src="assets/images/aasai.png"     alt="Aasai"></div>
-      <div class="donor-item"><img src="assets/images/idrf.svg"      alt="IDRF"></div>
-      <div class="donor-item"><img src="assets/images/sharecare.svg" alt="Share &amp; Care Foundation"></div>
+      <div class="donor-item donor-kalanjiyam"><img src="assets/images/kalanjiyam-trust.png" alt="Kalanjiyam Trust"></div>
     </div>
   </div>
 </section>
