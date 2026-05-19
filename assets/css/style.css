@@ -71,10 +71,12 @@ section{padding:88px 5%}
 /* ============================================================  NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,.98);backdrop-filter:blur(14px);height:66px;padding:0 5%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(38,28,21,.1);box-shadow:0 2px 12px rgba(38,28,21,.06)}
 .nav-logo{display:flex;align-items:center;gap:11px}
+.nav-logo-text{display:flex;flex-direction:column;gap:2px}
+.nav-logo-sub{font-size:.65rem;color:var(--text-light);font-weight:500;letter-spacing:.02em}
 .logo-mark{width:38px;height:38px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
 .logo-text .main{font-family:'IBM Plex Sans',sans-serif;font-size:1.08rem;font-weight:700;color:var(--white);display:block;line-height:1}
 .logo-text .sub{font-size:.58rem;color:rgba(197,216,109,.8);letter-spacing:.09em;text-transform:uppercase}
-.nav-logo-img{height:36px;width:auto;display:block;object-fit:contain}
+.nav-logo-img{height:52px;width:auto;display:block;object-fit:contain}
 .footer-logo-img{height:44px;width:auto;display:block;object-fit:contain;margin-bottom:4px}
 .nav-links{display:flex;align-items:center;gap:24px}
 .nav-links a{color:rgba(38,28,21,.75);font-size:.84rem;font-weight:500;transition:color .2s;white-space:nowrap}
@@ -235,10 +237,30 @@ footer{background:var(--dark);padding:50px 5% 24px}
   .pathway-arrow{display:none}
   .trust-item{padding:7px 14px}
   .stats-grid{grid-template-columns:1fr 1fr}
+  .nav-logo-text{display:none}
 }
 @media(max-width:560px){
-  section{padding:64px 5%}
+  section{padding:56px 5%}
   .stats-grid{grid-template-columns:1fr 1fr}
+  /* Trust strip: 2x2 on mobile */
+  .trust-strip{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0}
+  .trust-item{padding:12px 10px;border-right:none;border-bottom:1px solid rgba(0,0,0,.1);border-right:1px solid rgba(0,0,0,.1);justify-content:flex-start}
+  .trust-item:nth-child(2n){border-right:none}
+  .trust-item:nth-child(3),.trust-item:nth-child(4){border-bottom:none}
+  /* Purpose section: single column */
+  .purpose-grid{grid-template-columns:1fr !important}
+  /* Stats: 2 cols, last item full width */
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .stat-item:last-child:nth-child(odd){grid-column:1/-1}
+  /* Nav logo text: hide on very small */
+  .nav-logo-text{display:none}
+  /* Pathway: wrap into rows nicely */
+  .pathway-row{gap:8px}
+  .pathway-step{min-width:80px;padding:12px 8px}
+  .pathway-num{width:44px;height:44px}
+  /* Footer */
+  .footer-top{flex-direction:column}
+  .footer-links{flex-direction:column;gap:20px}
 }
 
 /* ============================================================
