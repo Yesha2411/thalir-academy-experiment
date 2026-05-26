@@ -185,7 +185,7 @@
 .slider-wrap::before,.slider-wrap::after{content:'';position:absolute;top:0;bottom:0;width:160px;z-index:2;pointer-events:none}
 .slider-wrap::before{left:0;background:linear-gradient(to right,#C5D86D,transparent)}
 .slider-wrap::after{right:0;background:linear-gradient(to left,#C5D86D,transparent)}
-.slider-inner{display:flex;align-items:center;width:max-content}
+.slider-inner{display:flex;align-items:center;width:max-content;will-change:transform}
 .donor-item{display:flex;align-items:center;justify-content:center;padding:14px 56px;border-right:1px solid rgba(38,28,21,.12)}
 .donor-item:last-child{border-right:none}
 .donor-item img{height:64px;width:auto;max-width:180px;object-fit:contain;transition:transform .3s ease}
@@ -198,47 +198,28 @@
     <span class="ds-label">Supported By</span>
     <h2 class="ds-title">Our Donors &amp; Partners</h2>
   </div>
-      <div class="slider-wrap" id="donorSliderWrap">
-      <div class="slider-inner" id="donorStrip">
-      <div class="donor-item donor-aasai"><img src="https://thalir-academy-experiment.vercel.app/assets/images/aasai.png" alt="Aasai Foundation"></div>
-      <div class="donor-item"><img src="https://thalir-academy-experiment.vercel.app/assets/images/idrf.svg" alt="IDRF"></div>
-      <div class="donor-item"><img src="https://thalir-academy-experiment.vercel.app/assets/images/sharecare.svg" alt="Share &amp; Care Foundation"></div>
-      <div class="donor-item donor-kalanjiyam"><img src="https://thalir-academy-experiment.vercel.app/assets/images/kalanjiyam-trust.png" alt="Kalanjiyam Trust"></div>
-      <div class="donor-item"><img src="https://thalir-academy-experiment.vercel.app/assets/images/icrdce.svg" alt="ICRDCE"></div>
-      <div class="donor-item"><img src="https://thalir-academy-experiment.vercel.app/assets/images/bff.svg" alt="BFF"></div>
-      </div>
-    </div>
-    <script>
-    (function(){
-      var strip = document.getElementById('donorStrip');
-      // Clone original items so we have seamless loop
-      var items = strip.innerHTML;
-      strip.innerHTML = items + items;
-      var pos = 0;
-      var speed = 0.5;
-      var paused = false;
-      strip.parentElement.addEventListener('mouseenter', function(){ paused = true; });
-      strip.parentElement.addEventListener('mouseleave', function(){ paused = false; });
-      function tick(){
-        if(!paused){
-          pos += speed;
-          var half = strip.scrollWidth / 2;
-          if(pos >= half) pos = 0;
-          strip.style.transform = 'translateX(-' + pos + 'px)';
-        }
-        requestAnimationFrame(tick);
-      }
-      // Wait for images to load before starting
-      var imgs = strip.querySelectorAll('img');
-      var loaded = 0;
-      function onLoad(){ loaded++; if(loaded >= imgs.length) tick(); }
-      imgs.forEach(function(img){
-        if(img.complete) onLoad();
-        else { img.addEventListener('load', onLoad); img.addEventListener('error', onLoad); }
-      });
-    })();
-    </script>
-</section>
+    <div class="slider-wrap">
+    <div class="slider-inner" id="ds"><div class="donor-item donor-aasai"><img src="https://thalir-academy-experiment.vercel.app/assets/images/aasai.png" alt="Aasai"></div><div class="donor-item"><img src="https://thalir-academy-experiment.vercel.app/assets/images/idrf.svg" alt="IDRF"></div><div class="donor-item"><img src="https://thalir-academy-experiment.vercel.app/assets/images/sharecare.svg" alt="Share &amp; Care"></div><div class="donor-item donor-kalanjiyam"><img src="https://thalir-academy-experiment.vercel.app/assets/images/kalanjiyam-trust.png" alt="Kalanjiyam Trust"></div><div class="donor-item"><img src="https://thalir-academy-experiment.vercel.app/assets/images/icrdce.svg" alt="ICRDCE"></div><div class="donor-item"><img src="https://thalir-academy-experiment.vercel.app/assets/images/bff.svg" alt="BFF"></div><div class="donor-item donor-aasai"><img src="https://thalir-academy-experiment.vercel.app/assets/images/aasai.png" alt="Aasai"></div><div class="donor-item"><img src="https://thalir-academy-experiment.vercel.app/assets/images/idrf.svg" alt="IDRF"></div><div class="donor-item"><img src="https://thalir-academy-experiment.vercel.app/assets/images/sharecare.svg" alt="Share &amp; Care"></div><div class="donor-item donor-kalanjiyam"><img src="https://thalir-academy-experiment.vercel.app/assets/images/kalanjiyam-trust.png" alt="Kalanjiyam Trust"></div><div class="donor-item"><img src="https://thalir-academy-experiment.vercel.app/assets/images/icrdce.svg" alt="ICRDCE"></div><div class="donor-item"><img src="https://thalir-academy-experiment.vercel.app/assets/images/bff.svg" alt="BFF"></div><div class="donor-item donor-aasai"><img src="https://thalir-academy-experiment.vercel.app/assets/images/aasai.png" alt="Aasai"></div><div class="donor-item"><img src="https://thalir-academy-experiment.vercel.app/assets/images/idrf.svg" alt="IDRF"></div><div class="donor-item"><img src="https://thalir-academy-experiment.vercel.app/assets/images/sharecare.svg" alt="Share &amp; Care"></div><div class="donor-item donor-kalanjiyam"><img src="https://thalir-academy-experiment.vercel.app/assets/images/kalanjiyam-trust.png" alt="Kalanjiyam Trust"></div><div class="donor-item"><img src="https://thalir-academy-experiment.vercel.app/assets/images/icrdce.svg" alt="ICRDCE"></div><div class="donor-item"><img src="https://thalir-academy-experiment.vercel.app/assets/images/bff.svg" alt="BFF"></div><div class="donor-item donor-aasai"><img src="https://thalir-academy-experiment.vercel.app/assets/images/aasai.png" alt="Aasai"></div><div class="donor-item"><img src="https://thalir-academy-experiment.vercel.app/assets/images/idrf.svg" alt="IDRF"></div><div class="donor-item"><img src="https://thalir-academy-experiment.vercel.app/assets/images/sharecare.svg" alt="Share &amp; Care"></div><div class="donor-item donor-kalanjiyam"><img src="https://thalir-academy-experiment.vercel.app/assets/images/kalanjiyam-trust.png" alt="Kalanjiyam Trust"></div><div class="donor-item"><img src="https://thalir-academy-experiment.vercel.app/assets/images/icrdce.svg" alt="ICRDCE"></div><div class="donor-item"><img src="https://thalir-academy-experiment.vercel.app/assets/images/bff.svg" alt="BFF"></div></div>
+  </div>
+  <script>
+  !function(){
+    var el=document.getElementById('ds');
+    var x=0, spd=0.6, stop=false;
+    el.parentElement.addEventListener('mouseenter',function(){stop=true});
+    el.parentElement.addEventListener('mouseleave',function(){stop=false});
+    function run(){
+      if(!stop) x+=spd;
+      // half = one full set width
+      var half=el.scrollWidth/4;
+      if(x>=half) x-=half;
+      el.style.transform='translateX(-'+x+'px)';
+      requestAnimationFrame(run);
+    }
+    // start immediately — 4 sets means plenty of buffer while images load
+    run();
+  }();
+  </script>
+  </section>
 
 <!-- GET INVOLVED CTA -->
 <section style="background:var(--bg-pale);text-align:center">
